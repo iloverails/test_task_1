@@ -18,6 +18,7 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 // Initializing system variables 
 var config = require('./config/config'),
     mongoose = require('mongoose');
+var fs = require('fs');
 
 // Bootstrap db connection
 var db = mongoose.connect(config.db);
@@ -59,7 +60,11 @@ var walkRoutes = function(path) {
 };
 
 walkRoutes(routes_path);
+var dir = './public/uploads';
 
+if (!fs.existsSync(dir)){
+    fs.mkdirSync(dir);
+}
 // Start the app by listening on <port>
 
 var port = process.env.PORT || config.port;

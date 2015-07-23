@@ -5,5 +5,4 @@
 .bower-registry/
 node_modules/
 public/uploads
-public/build
 public/bower_components

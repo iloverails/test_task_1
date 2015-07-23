@@ -1,0 +1,24 @@
+{
+  "main" : {
+    "css": {
+      "public/build/css/dist.min.css": [
+        "public/bower_components/bootstrap/dist/css/bootstrap.css",
+        "public/css/**/*.css"
+      ]
+    },
+    "js": {
+      "public/build/js/dist.min.js": [
+        "public/bower_components/jquery/dist/jquery.min.js",
+        "public/bower_components/underscore/underscore.js",
+        "public/bower_components/angular/angular.min.js",
+        "public/bower_components/angular-cookies/angular-cookies.min.js",
+        "public/bower_components/angular-resource/angular-resource.min.js",
+        "public/bower_components/angular-route/angular-route.min.js",
+        "public/bower_components/angular-ui-router/release/angular-ui-router.js",
+        "public/bower_components/angular-bootstrap/ui-bootstrap.js",
+        "public/bower_components/angular-bootstrap/ui-bootstrap-tpls.js",
+        "public/js/**/*.js"
+      ]
+    }
+  }
+}

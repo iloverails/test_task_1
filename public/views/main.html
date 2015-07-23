@@ -1,0 +1,53 @@
+<section>
+    <div class="row">
+        <div carousel-j></div>
+    </div>
+    <div class="row">
+        <div class="col-md-5">
+            <form name="formTest" ng-submit="submitForm()" novalidate>
+                <div style="height: 75px">
+                    <div style="float: left">
+                    <span class="btn btn-primary btn-file" style="margin-top: 10px" ng-disabled="uploading">
+                        <span>{{'Select Image to Upload'}}</span>
+                        <input type="file" name="item" ng-model="file" onchange="angular.element(this).scope().setFile(this.name, this.files)" required/>
+                    </span>
+                    </div>
+                    <div style="float: left">
+                        <div class="temp-item" ng-show="new_file.name">
+                            <img ng-src="{{new_file.src}}"/>
+                            <span class="temp-caption">{{new_file.name}}</span>
+                        </div>
+                    </div>
+                </div>
+                <textarea class="form-control" name="caption" ng-model="new_file.caption" placeholder="Enter Caption Please"></textarea>
+                <p class="error">{{new_file.errors}}</p>
+                <p ng-show="!new_file.src && submitted" class="error"> Select file please </p>
+
+                <button class="btn btn-warning" ng-click="submitted=true" style="float: right" ng-disabled="uploading">
+                    Upload
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </button>
+            </form>
+        </div>
+        <div class="col-md-7">
+            <table class="table">
+                <thead>
+                    <th>Image ID</th>
+                    <th>Image URL</th>
+                    <th>Caption</th>
+                    <th>Impressions count</th>
+                    <th>Action</th>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in itemService.getItems()">
+                        <td>{{item._id}}</td>
+                        <td>{{item.path}}</td>
+                        <td>{{item.caption}}</td>
+                        <td>{{item.impressions}}</td>
+                        <td><span style="color: red;cursor: pointer" ng-confirm-click="Are you sure?" confirmed-click="itemService.removeItem(item)" class="glyphicon glyphicon-remove"></span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>

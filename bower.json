@@ -1,0 +1,21 @@
+{
+    "name": "mean",
+    "version": "0.1.3",
+    "dependencies": {
+        "angular": "#1.2.26",
+        "angular-resource": "#1.2.26",
+        "angular-cookies": "#1.2.26",
+        "angular-mocks": "#1.2.26",
+        "angular-route": "#1.2.26",
+        "bootstrap": "~3.3.0",
+        "angular-bootstrap": "0.10.0",
+        "angular-ui-router": "#master",
+        "jquery": "~2.1.3",
+        "respond": "~1.4.2",
+        "html5shiv": "~3.7.0",
+        "underscore": "latest",
+        "ngprogress": "latest",
+        "angular-socket-io": "~0.3.0",
+        "angular-input-stars": "*"
+    }
+}

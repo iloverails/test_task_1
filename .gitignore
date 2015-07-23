@@ -1,0 +1,9 @@
+.DS_Store
+.nodemonignore
+.idea/
+.bower-cache/
+.bower-registry/
+node_modules/
+public/uploads
+public/build
+public/bower_components

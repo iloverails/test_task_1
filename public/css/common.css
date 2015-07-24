@@ -143,5 +143,10 @@
 }
 
 .remove-item{
-    cursor: pointer;color: red;position: absolute;top: 0; right: 5px;
+    cursor: pointer;
+    color: red;
+    position: absolute;
+    top: 0;
+    right: 5px;
+    font-size: 20px;
 }

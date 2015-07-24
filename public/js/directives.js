@@ -23,7 +23,8 @@ angular.module('test_task').directive('carouselJ',
             '<a href="javascript:void(0)" class="btn btn-primary jcarousel-control-prev" ng-disabled="disableControls"><span class="glyphicon glyphicon-chevron-left"></span></a>' +
             '<div class="jcarousel">' +
                 '<ul class="jcarousel-container">' +
-                    '<li ng-repeat="item in itemService.getItems()" data-id="{{item._id}}" style="height:170px;text-align: center;position: relative">' +
+                    '<li ng-repeat="item in itemService.getItems()" ng-mouseover="showClose[$index]=true" ng-mouseleave="showClose[$index]=false" data-id="{{item._id}}" style="height:170px;text-align: center;position: relative">' +
+                        '<i ng-confirm-click="Are you sure?" confirmed-click="itemService.removeItem(item)" ng-show="showClose[$index]" class="remove-item glyphicon glyphicon-remove"></i>'+
                         '<div star-rating ng-model="item.rating" max="5" on-rating-selected="rateFunction(item, rating)"></div>'+
                         '<div class="contain">'+
                         '<div style="text-align: center"><img style="max-width: 100%;margin: 0 auto;" ng-src="{{item.path}}"></div>'+
@@ -135,7 +136,7 @@ angular.module('test_task').directive("starRating", function() {
             restrict : "EA",
             template : "<ul class='rating' ng-class='{readonly: readonly}'>" +
             "  <li ng-repeat='star in stars' ng-class='star' ng-click='toggle($index)'>" +
-            "    <i class='glyphicon glyphicon-star'></i>" + //&#9733
+            "    <i class='glyphicon glyphicon-heart'></i>" + //&#9733
             "  </li>" +
             "</ul>",
             scope : {

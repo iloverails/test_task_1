@@ -90,20 +90,15 @@ angular.module('test_task').directive('carouselJ',
                 interval: 5*1000
             });
             jcarousel.on('jcarousel:scrollend', function(event, carousel) {
-                var newArr = [];
                 _.each(jcarousel.jcarousel('visible'), function(el){
-                    newArr.push($(el).data('id'))
-                    if (previousVisible.indexOf($(el).data('id'))==-1){
-                        _.each(ItemService.getItems(), function(item, n){
-                            if (item._id == $(el).data('id')){
-                                item.impressions = item.impressions || 0;
-                                item.impressions += 1
-                                ItemService.updateItem(item)
-                            }
-                        })
-                    }
+                    _.each(ItemService.getItems(), function(item, n){
+                        if (item._id == $(el).data('id')){
+                            item.impressions = item.impressions || 0;
+                            item.impressions += 1
+                            ItemService.updateItem(item)
+                        }
+                    })
                 });
-                previousVisible = newArr;
             });
 
             $timeout(function(){
